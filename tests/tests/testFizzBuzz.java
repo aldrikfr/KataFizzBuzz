@@ -28,11 +28,20 @@ public class testFizzBuzz {
 
 	
 	@Test
-	public void testGetAnswerWith3() {
-		assertGame(new String[] {"Fizz"}, new int[] {3});
+	public void testGetAnswerWithFizzRule() {
+		assertGame(new String[] {"Fizz","Fizz"}, new int[] {3,6});
 	}	
 	
+	@Test
+	public void testGetAnswerWithBuzzRule() {
+		assertGame(new String[] {"Buzz","Buzz"}, new int[] {5,10});
+	}
 	
+	
+	@Test
+	public void testGetAnswerWithFizz_BuzzRule() {
+		assertGame(new String[] {"FizzBuzz"}, new int[] {15});
+	}
 	
 	@Before
 	public void setUp() throws Exception {
