@@ -41,8 +41,6 @@ public class GenericGame {
 			answer = eachRule.apply(number, answer);
 		}
 
-		
-		
 		return answer;	
 	}
 
