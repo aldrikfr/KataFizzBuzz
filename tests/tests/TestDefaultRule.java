@@ -6,16 +6,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import fizzbuzz.rules.DefaultRule;
 import fizzbuzz.rules.GenericRule;
 import fizzbuzz.rules.ModuloRule;
 
-public class TestModuloRule {
+public class TestDefaultRule {
 
 	private GenericRule rule;
 	
 	@Before
 	public void setUp() throws Exception {
-		this.rule = new ModuloRule(3,"Fizz");
+		this.rule = new DefaultRule();
 	}
 
 	@After
@@ -23,23 +24,12 @@ public class TestModuloRule {
 	}
 
 	@Test
-	public void testApplyWith3() {
-		int input = 3;
-		String expected = "Fizz";
-		
-		String result = this.rule.apply(input, "");
-		
-		assertEquals(expected,result);
-	}
-	
-	@Test
 	public void testApplyWith1() {
 		int input = 1;
-		String expected = "";
+		String expected = "1";
 		
 		String result = this.rule.apply(input, "");
 		
 		assertEquals(expected,result);
 	}
-
 }

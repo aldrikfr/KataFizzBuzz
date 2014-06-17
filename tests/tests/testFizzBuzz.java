@@ -3,17 +3,19 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import fizzbuzz.FizzBuzzGame;
-
+import fizzbuzz.GenericGame;
+import fizzbuzz.rules.*;
 
 
 public class testFizzBuzz {
 
-	FizzBuzzGame game;
+	GenericGame game;
 	
 	@Test
 	public void testGetAnswerWithDefaultRule() {
@@ -45,7 +47,12 @@ public class testFizzBuzz {
 	
 	@Before
 	public void setUp() throws Exception {
-		this.game = new FizzBuzzGame();
+		ArrayList<GenericRule> rules = new ArrayList<>();
+		rules.add(new ModuloRule(3, "Fizz"));
+		rules.add(new ModuloRule(5, "Buzz"));
+		rules.add(new DefaultRule());
+		
+		this.game = new GenericGame(rules);
 	}
 	
 	@After

@@ -16,11 +16,11 @@ public class ModuloRule implements GenericRule {
 	 * @see fizzbuzz.rules.GenericRule#apply(int)
 	 */
 	@Override
-	public String apply(int number) {
-        String answer = "";
+	public String apply(int number, String currentAnswer) {
+        String answer = currentAnswer;
      
 		if(checkRule(number)){
-			answer = this.answerToUse;
+			answer = currentAnswer.concat(this.answerToUse);
 		}
 		
 		return answer;
