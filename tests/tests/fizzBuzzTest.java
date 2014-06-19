@@ -51,6 +51,38 @@ public class fizzBuzzTest {
 		
 	}
 	
+	@Test
+	public void testGetAnswerWithFizz() {
+		int numbersFromUser[] = {3,6,9};
+		String[] expected = {"Fizz","Fizz","Fizz"};
+		
+		this.assertAnswer(expected, numbersFromUser);
+		
+		
+	}
+	
+	
+	@Test
+	public void testGetAnswerWithBuzz() {
+		int numbersFromUser[] = {5,10,20};
+		String[] expected = {"Buzz","Buzz","Buzz"};
+		
+		this.assertAnswer(expected, numbersFromUser);
+		
+		
+	}
+	
+	@Test
+	public void testGetAnswerWith2rules() {
+		int numbersFromUser[] = {15};
+		String[] expected = {"FizzBuzz"};
+		
+		this.assertAnswer(expected, numbersFromUser);
+		
+		
+	}
+	
+	
 	private void assertAnswer(String[] expected, int numbersFromUser[])
 	{
 		
